@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public record CadastroCompraDTO(
-        Long idUsuario,
-        List<Item> items
+        Long idLogin,
+        List<Long> idsItems
 ) {
 }

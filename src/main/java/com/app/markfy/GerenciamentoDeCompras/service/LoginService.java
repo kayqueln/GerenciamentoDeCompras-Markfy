@@ -50,15 +50,14 @@ public class LoginService {
         return loginsDetalhados;
     }
     
-    public DetalhamentoLoginDTO buscarLoginPorId(Long id) throws NotFoundResourceException {
+    public Login buscarLoginPorId(Long id) throws NotFoundResourceException {
         Optional<Login> login = LoginRepository.findById(id);
     
         if(!login.isPresent()){
             throw new NotFoundResourceException("Não foi possivel encontrar o login");
         }
 
-        DetalhamentoLoginDTO detalhamentoLoginDTO = new DetalhamentoLoginDTO(login.get());
-        return detalhamentoLoginDTO;
+        return login.get();
     }
 }
 

@@ -1,11 +1,13 @@
 package com.app.markfy.GerenciamentoDeCompras.model;
 
 import com.app.markfy.GerenciamentoDeCompras.dto.login.CadastroLoginDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Table
 @Entity
@@ -21,6 +23,10 @@ public class Login {
 
     @ManyToOne
     private Usuario usuario;
+
+    @OneToMany
+    @JsonIgnore
+    private List<Compra> compras;
 
     public Login(String email, String senha, Usuario usuario) {
         this.email = email;

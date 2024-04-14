@@ -20,16 +20,18 @@ public class Compra {
     private Boolean statusDaCompra;
 
     @ManyToOne
-    private Usuario usuario;
+    private Login login;
 
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Item> items;
+    private Float valorTotal;
 
-    public Compra(Usuario usuario, List<Item> items) {
-        this.usuario = usuario;
+    public Compra(Login login, List<Item> items, Float valorTotal) {
+        this.login = login;
         this.statusDaCompra = false;
         this.dataDaCompra = LocalDate.now();
         this.items = items;
+        this.valorTotal = valorTotal;
     }
 
     public void atualizarCompra(AtualizacaoCompraDTO atualizacaoCompraDTO) {

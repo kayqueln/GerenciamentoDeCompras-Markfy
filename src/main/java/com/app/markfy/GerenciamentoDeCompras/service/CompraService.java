@@ -2,10 +2,12 @@ package com.app.markfy.GerenciamentoDeCompras.service;
 
 import com.app.markfy.GerenciamentoDeCompras.dto.compra.CadastroCompraDTO;
 import com.app.markfy.GerenciamentoDeCompras.dto.compra.DetalhamentoCompraDTO;
+import com.app.markfy.GerenciamentoDeCompras.dto.login.DetalhamentoLoginDTO;
+import com.app.markfy.GerenciamentoDeCompras.exceptions.CompraException;
 import com.app.markfy.GerenciamentoDeCompras.exceptions.NotFoundResourceException;
 import com.app.markfy.GerenciamentoDeCompras.model.Compra;
 import com.app.markfy.GerenciamentoDeCompras.model.Item;
-import com.app.markfy.GerenciamentoDeCompras.model.Usuario;
+import com.app.markfy.GerenciamentoDeCompras.model.Login;
 import com.app.markfy.GerenciamentoDeCompras.repository.CompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,24 +22,44 @@ public class CompraService {
     @Autowired
     private CompraRepository compraRepository;
     @Autowired
-    private UsuarioService usuarioService;
+    private LoginService loginService;
+    @Autowired
+    private ItemService itemService;
 
-    //IMPLEMENTAR VALOR TOTAL DA COMPRA
     public DetalhamentoCompraDTO cadastrarCompra(CadastroCompraDTO cadastroCompraDTO) throws Exception {
         try{
-            Usuario usuario = usuarioService.buscarUsuarioPorId(cadastroCompraDTO.idUsuario());
-            Compra compra = new Compra(usuario, cadastroCompraDTO.items());
+            Login login = loginService.buscarLoginPorId(cadastroCompraDTO.idLogin());
 
+            List<Item> items = new ArrayList<>();
+            for(Long idItem : cadastroCompraDTO.idsItems()){
+                Item item = itemService.buscarItemPorId(idItem);
+                items.add(item);
+            }
+
+            for(Item item : items){
+                System.out.println(item.getEstoque());
+                if(item.getEstoque() < 1){
+                    throw new CompraException("Não é possível efetuar a compra. Item indisponível no estoque");
+                }
+            }
+
+            float valorTotal = 0f;
+            for(Item item : items){
+                float valorItem = item.getValor();
+                valorTotal += valorItem;
+            }
+
+            Compra compra = new Compra(login, items, valorTotal);
             compraRepository.save(compra);
-            DetalhamentoCompraDTO compraDTO = new DetalhamentoCompraDTO(compra);
-            return compraDTO;
+            return new DetalhamentoCompraDTO(compra);
         }catch (NotFoundResourceException e){
             throw new Exception(e.getMessage()); 
+        } catch (CompraException e) {
+            throw new Exception(e.getMessage());
         }
     }
 
 
-    //ABAIXAR ESTOUE DO ITEM AUTOMATICAMENTE
     public DetalhamentoCompraDTO confirmarCompra(Long id) throws NotFoundResourceException {
         Optional<Compra> compra = compraRepository.findById(id);
 

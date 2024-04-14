@@ -42,7 +42,7 @@ public class LoginController {
     @GetMapping("/{id}")
     public ResponseEntity buscarPorId(@PathVariable Long id){
         try {
-            DetalhamentoLoginDTO login = loginService.buscarLoginPorId(id);
+            Login login = loginService.buscarLoginPorId(id);
             return ResponseEntity.status(200).body(login);
         }catch (NotFoundResourceException e){
             error.setError(e.getMessage());
