@@ -20,23 +20,25 @@ Para rodar a aplicação, siga os passos abaixo:
 
 1. Clone o repositório do projeto para o seu ambiente local.
 2. Certifique-se de ter o Java JDK e o Spring Boot instalados em sua máquina.
-3. Abra o terminal e navegue até o diretório raiz do projeto.
-4. Execute o comando `./mvnw spring-boot:run` para iniciar o servidor.
-5. Use o `-Dspring.profiles.active=dev` caso queira rodar em um ambiente de dev com um banco de dados em memória .
-5. Acesse a aplicação em seu navegador utilizando o endereço `http://localhost:8080/gerenciamento-de-compras`.
+3. Abra o terminal e navegue até o diretório onde está o projeto.
+4. Abra o projeto na sua IDE de preferencia.
+5. Baixe as dependências do Maven utilizando o comando: `mvn clean install`.
+6. Rode a classe `GerenciamentoDeComprasApplication`
+5. Use o `-Dspring.profiles.active=dev` caso queira rodar em um ambiente de desenvolvimento com um banco de dados em memória (H2).
+5. Acesse a aplicação em seu navegador ou client utilizando o endereço `http://localhost:8080/gerenciamento-de-compras/endpoint-desejado`.
 
-## Diagramas:
+## Diagramas da arquitetura do software:
 
-Diagrama de classes:
+### Diagrama de classes:
 ![Diagrama de classes.png](./documentos_do_projeto/Diagrama%20de%20classes.png)
 
 
-Diagrama de Entidade e Relacionamento:
+### Diagrama de Entidade e Relacionamento:
 ![DER.png](./documentos_do_projeto/DER.png)
 
 ## Vídeo de Apresentação:
 
-[Link para o vídeo de apresentação](#)
+Acesse: [https://www.youtube.com/watch?v=k0ObOt--m1k](#)
 
 ## Documentação da API:
 
@@ -75,7 +77,11 @@ Aqui estão listados todos os endpoints disponíveis na API de acordo com os dom
 
 
 ## Atenção
-Para mais detalhes sobre cada endpoint, na raiz do repositório disponibilizamos a collection do Insomnia com todas as requisiçoes existentes. Siga os passos abaixo para executá-las.
-1. Faça o download do software Insomnia
-2. Faça o download do arquivo: `Insominia_Collection_Markfy.json`
-3. No Insomnia importe esse JSON como uma nova collection.
+Para mais detalhes sobre cada endpoint acesse a collection do Insomnia com todas as requisiçoes existentes. Siga os passos abaixo para executá-las.
+1. Na raiz desse repositório entre na pasta `documentos_do_projeto`.
+2. Faça o download do arquivo: `Insominia_Collection_Markfy.json`.
+1. Certifique-se de ter o software Insomnia instalado na sua máquina.
+3. No Insomnia clique no botão `create` ou no ícone de mais `+`.
+4. Depois clique na opção `importar`.
+5. Selecione o JSON (Insominia_Collection_Markfy.json) baixado e importe a collection.
+6. Faça as chamadas aos endpoints listados acima respeitando a ordem das requisições
