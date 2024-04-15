@@ -6,7 +6,7 @@ public record CadastroItemDTO(
         String nome,
         Float valor,
         String marca,
-        TamanhoEnum tamanhoEnum,
+        TamanhoEnum tamanho,
         Integer estoque
 ) {
 }

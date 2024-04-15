@@ -13,6 +13,6 @@ public record DetalhamentoItemDTO(
 ) {
 
     public DetalhamentoItemDTO(Item item) {
-        this(item.getId(), item.getNome(), item.getValor(), item.getMarca(), item.getTamanhoEnum(), item.getEstoque());
+        this(item.getId(), item.getNome(), item.getValor(), item.getMarca(), item.getTamanho(), item.getEstoque());
     }
 }

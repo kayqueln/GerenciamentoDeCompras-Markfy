@@ -21,7 +21,7 @@ public class Item {
     private String nome;
     private Float valor;
     private String marca;
-    private TamanhoEnum tamanhoEnum;
+    private TamanhoEnum tamanho;
     private Integer estoque;
 
     @ManyToMany
@@ -32,7 +32,7 @@ public class Item {
         this.nome = cadastroItemDTO.nome();
         this.valor = cadastroItemDTO.valor();
         this.marca = cadastroItemDTO.marca();
-        this.tamanhoEnum = cadastroItemDTO.tamanhoEnum();
+        this.tamanho = cadastroItemDTO.tamanho();
         this.estoque = cadastroItemDTO.estoque();
     }
 
@@ -40,7 +40,7 @@ public class Item {
         if(atualizacaoItemDTO.nome() != null) this.nome = atualizacaoItemDTO.nome();
         if(atualizacaoItemDTO.valor() != null) this.valor = atualizacaoItemDTO.valor();
         if(atualizacaoItemDTO.marca() != null) this.marca = atualizacaoItemDTO.marca();
-        if(atualizacaoItemDTO.tamanhoEnum() != null) this.tamanhoEnum = atualizacaoItemDTO.tamanhoEnum();
+        if(atualizacaoItemDTO.tamanhoEnum() != null) this.tamanho = atualizacaoItemDTO.tamanhoEnum();
         if(atualizacaoItemDTO.estoque() != null) this.estoque = atualizacaoItemDTO.estoque();
     }
 }

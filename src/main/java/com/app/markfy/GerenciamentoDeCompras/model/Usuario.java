@@ -25,13 +25,13 @@ public class Usuario {
     private LocalDate dataDeNasciemto;
     private String email;
     private String senha;
-    private SexoEnum sexoEnum;
+    private SexoEnum sexo;
     //bater em api para buscar dados com o cpf
     private String cpf;
-    private EstadoCivilEnum estadoCivilEnum;
-    private NivelEducacionalEnum nivelEducacionalEnum;
+    private EstadoCivilEnum estadoCivil;
+    private NivelEducacionalEnum nivelEducacional;
     private Float rendaAnual;
-    private OcupacaoEnum ocupacaoEnum;
+    private OcupacaoEnum ocupacao;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
@@ -47,12 +47,12 @@ public class Usuario {
         this.dataDeNasciemto = cadastroUsuarioDTO.dataDeNasciemto();
         this.email = cadastroUsuarioDTO.email();
         this.senha = cadastroUsuarioDTO.senha();
-        this.sexoEnum = cadastroUsuarioDTO.sexoEnum();
+        this.sexo = cadastroUsuarioDTO.sexo();
         this.cpf = cadastroUsuarioDTO.cpf();
-        this.estadoCivilEnum = cadastroUsuarioDTO.estadoCivilEnum();
-        this.nivelEducacionalEnum = cadastroUsuarioDTO.nivelEducacionalEnum();
+        this.estadoCivil = cadastroUsuarioDTO.estadoCivil();
+        this.nivelEducacional= cadastroUsuarioDTO.nivelEducacional();
         this.rendaAnual = cadastroUsuarioDTO.rendaAnual();
-        this.ocupacaoEnum = cadastroUsuarioDTO.ocupacaoEnum();
+        this.ocupacao = cadastroUsuarioDTO.ocupacao();
         this.endereco = cadastroUsuarioDTO.endereco();
         this.compras = cadastroUsuarioDTO.compras();
     }
@@ -62,11 +62,11 @@ public class Usuario {
         if(atualizacaoUsuarioDTO.dataDeNasciemto() != null) this.dataDeNasciemto = atualizacaoUsuarioDTO.dataDeNasciemto();
         if(atualizacaoUsuarioDTO.email() != null) this.email = atualizacaoUsuarioDTO.email();
         if(atualizacaoUsuarioDTO.senha() != null) this.senha = atualizacaoUsuarioDTO.senha();
-        if(atualizacaoUsuarioDTO.sexoEnum() != null) this.sexoEnum = atualizacaoUsuarioDTO.sexoEnum();
+        if(atualizacaoUsuarioDTO.sexoEnum() != null) this.sexo = atualizacaoUsuarioDTO.sexoEnum();
         if(atualizacaoUsuarioDTO.cpf() != null) this.cpf = atualizacaoUsuarioDTO.cpf();
-        if(atualizacaoUsuarioDTO.estadoCivilEnum() != null) this.estadoCivilEnum = atualizacaoUsuarioDTO.estadoCivilEnum();
-        if(atualizacaoUsuarioDTO.nivelEducacionalEnum() != null) this.nivelEducacionalEnum = atualizacaoUsuarioDTO.nivelEducacionalEnum();
+        if(atualizacaoUsuarioDTO.estadoCivilEnum() != null) this.estadoCivil = atualizacaoUsuarioDTO.estadoCivilEnum();
+        if(atualizacaoUsuarioDTO.nivelEducacionalEnum() != null) this.nivelEducacional = atualizacaoUsuarioDTO.nivelEducacionalEnum();
         if(atualizacaoUsuarioDTO.rendaAnual() != null) this.rendaAnual = atualizacaoUsuarioDTO.rendaAnual();
-        if(atualizacaoUsuarioDTO.ocupacaoEnum() != null) this.ocupacaoEnum = atualizacaoUsuarioDTO.ocupacaoEnum();
+        if(atualizacaoUsuarioDTO.ocupacaoEnum() != null) this.ocupacao = atualizacaoUsuarioDTO.ocupacaoEnum();
     }
 }

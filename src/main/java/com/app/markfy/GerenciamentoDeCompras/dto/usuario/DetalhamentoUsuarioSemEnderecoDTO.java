@@ -28,12 +28,12 @@ public record DetalhamentoUsuarioSemEnderecoDTO(
                 usuario.getDataDeNasciemto(),
                 usuario.getEmail(),
                 usuario.getSenha(),
-                usuario.getSexoEnum(),
+                usuario.getSexo(),
                 usuario.getCpf(),
-                usuario.getEstadoCivilEnum(),
-                usuario.getNivelEducacionalEnum(),
+                usuario.getEstadoCivil(),
+                usuario.getNivelEducacional(),
                 usuario.getRendaAnual(),
-                usuario.getOcupacaoEnum()
+                usuario.getOcupacao()
         );
     }
 }

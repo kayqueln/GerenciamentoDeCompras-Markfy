@@ -30,12 +30,12 @@ public record DetalhamentoUsuarioDTO(
                 usuario.getDataDeNasciemto(),
                 usuario.getEmail(),
                 usuario.getSenha(),
-                usuario.getSexoEnum(),
+                usuario.getSexo(),
                 usuario.getCpf(),
-                usuario.getEstadoCivilEnum(),
-                usuario.getNivelEducacionalEnum(),
+                usuario.getEstadoCivil(),
+                usuario.getNivelEducacional(),
                 usuario.getRendaAnual(),
-                usuario.getOcupacaoEnum(),
+                usuario.getOcupacao(),
                 usuario.getEndereco()
         );
     }

@@ -14,12 +14,12 @@ public record CadastroUsuarioDTO(
         LocalDate dataDeNasciemto,
         String email,
         String senha,
-        SexoEnum sexoEnum,
+        SexoEnum sexo,
         String cpf,
-        EstadoCivilEnum estadoCivilEnum,
-        NivelEducacionalEnum nivelEducacionalEnum,
+        EstadoCivilEnum estadoCivil,
+        NivelEducacionalEnum nivelEducacional,
         Float rendaAnual,
-        OcupacaoEnum ocupacaoEnum,
+        OcupacaoEnum ocupacao,
         Endereco endereco,
         List<Compra> compras
 ) {
