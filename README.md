@@ -38,7 +38,7 @@ Para rodar a aplicação, siga os passos abaixo:
 
 ## Vídeo de Apresentação:
 
-Acesse: [https://www.youtube.com/watch?v=k0ObOt--m1k](#)
+Acesse: [Clique aqui para assistir o vídeo de apresentação](https://www.youtube.com/watch?v=k0ObOt--m1k)
 
 ## Documentação da API:
 
