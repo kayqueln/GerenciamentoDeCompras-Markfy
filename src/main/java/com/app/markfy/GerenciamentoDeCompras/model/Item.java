@@ -2,7 +2,7 @@ package com.app.markfy.GerenciamentoDeCompras.model;
 
 import com.app.markfy.GerenciamentoDeCompras.dto.item.AtualizacaoItemDTO;
 import com.app.markfy.GerenciamentoDeCompras.dto.item.CadastroItemDTO;
-import com.app.markfy.GerenciamentoDeCompras.model.enums.Tamanho;
+import com.app.markfy.GerenciamentoDeCompras.model.enums.TamanhoEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,7 +21,7 @@ public class Item {
     private String nome;
     private Float valor;
     private String marca;
-    private Tamanho tamaho;
+    private TamanhoEnum tamanhoEnum;
     private Integer estoque;
 
     @ManyToMany
@@ -32,7 +32,7 @@ public class Item {
         this.nome = cadastroItemDTO.nome();
         this.valor = cadastroItemDTO.valor();
         this.marca = cadastroItemDTO.marca();
-        this.tamaho = cadastroItemDTO.tamanho();
+        this.tamanhoEnum = cadastroItemDTO.tamanhoEnum();
         this.estoque = cadastroItemDTO.estoque();
     }
 
@@ -40,7 +40,7 @@ public class Item {
         if(atualizacaoItemDTO.nome() != null) this.nome = atualizacaoItemDTO.nome();
         if(atualizacaoItemDTO.valor() != null) this.valor = atualizacaoItemDTO.valor();
         if(atualizacaoItemDTO.marca() != null) this.marca = atualizacaoItemDTO.marca();
-        if(atualizacaoItemDTO.tamanho() != null) this.tamaho = atualizacaoItemDTO.tamanho();
+        if(atualizacaoItemDTO.tamanhoEnum() != null) this.tamanhoEnum = atualizacaoItemDTO.tamanhoEnum();
         if(atualizacaoItemDTO.estoque() != null) this.estoque = atualizacaoItemDTO.estoque();
     }
 }

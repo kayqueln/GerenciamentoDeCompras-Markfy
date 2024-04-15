@@ -37,7 +37,6 @@ public class CompraService {
             }
 
             for(Item item : items){
-                System.out.println(item.getEstoque());
                 if(item.getEstoque() < 1){
                     throw new CompraException("Não é possível efetuar a compra. Item indisponível no estoque");
                 }

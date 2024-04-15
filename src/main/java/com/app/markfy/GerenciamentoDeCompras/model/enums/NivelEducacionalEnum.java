@@ -1,6 +1,6 @@
 package com.app.markfy.GerenciamentoDeCompras.model.enums;
 
-public enum NivelEducacional {
+public enum NivelEducacionalEnum {
     FUNDAMENTAL,
     MEDIO,
     SUPERIOR_GRADUACAO,

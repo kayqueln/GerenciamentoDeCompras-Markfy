@@ -1,9 +1,9 @@
 package com.app.markfy.GerenciamentoDeCompras.dto.usuario;
 
-import com.app.markfy.GerenciamentoDeCompras.model.enums.EstadoCivil;
-import com.app.markfy.GerenciamentoDeCompras.model.enums.NivelEducacional;
-import com.app.markfy.GerenciamentoDeCompras.model.enums.Ocupacao;
-import com.app.markfy.GerenciamentoDeCompras.model.enums.Sexo;
+import com.app.markfy.GerenciamentoDeCompras.model.enums.EstadoCivilEnum;
+import com.app.markfy.GerenciamentoDeCompras.model.enums.NivelEducacionalEnum;
+import com.app.markfy.GerenciamentoDeCompras.model.enums.OcupacaoEnum;
+import com.app.markfy.GerenciamentoDeCompras.model.enums.SexoEnum;
 
 import java.time.LocalDate;
 
@@ -12,11 +12,11 @@ public record AtualizacaoUsuarioDTO(
         LocalDate dataDeNasciemto,
         String email,
         String senha,
-        Sexo sexo,
+        SexoEnum sexoEnum,
         String cpf,
-        EstadoCivil estadoCivil,
-        NivelEducacional nivelEducacional,
+        EstadoCivilEnum estadoCivilEnum,
+        NivelEducacionalEnum nivelEducacionalEnum,
         Float rendaAnual,
-        Ocupacao ocupacao
+        OcupacaoEnum ocupacaoEnum
 ) {
 }

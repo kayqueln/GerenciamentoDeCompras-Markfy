@@ -1,6 +1,6 @@
 package com.app.markfy.GerenciamentoDeCompras.model.enums;
 
-public enum Ocupacao {
+public enum OcupacaoEnum {
     ESTUDANTE,
     EMPREGADO,
     DESEMPREGADO,

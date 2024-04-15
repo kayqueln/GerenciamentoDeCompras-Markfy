@@ -2,10 +2,10 @@ package com.app.markfy.GerenciamentoDeCompras.model;
 
 import com.app.markfy.GerenciamentoDeCompras.dto.usuario.AtualizacaoUsuarioDTO;
 import com.app.markfy.GerenciamentoDeCompras.dto.usuario.CadastroUsuarioDTO;
-import com.app.markfy.GerenciamentoDeCompras.model.enums.EstadoCivil;
-import com.app.markfy.GerenciamentoDeCompras.model.enums.NivelEducacional;
-import com.app.markfy.GerenciamentoDeCompras.model.enums.Ocupacao;
-import com.app.markfy.GerenciamentoDeCompras.model.enums.Sexo;
+import com.app.markfy.GerenciamentoDeCompras.model.enums.EstadoCivilEnum;
+import com.app.markfy.GerenciamentoDeCompras.model.enums.NivelEducacionalEnum;
+import com.app.markfy.GerenciamentoDeCompras.model.enums.OcupacaoEnum;
+import com.app.markfy.GerenciamentoDeCompras.model.enums.SexoEnum;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,13 +25,13 @@ public class Usuario {
     private LocalDate dataDeNasciemto;
     private String email;
     private String senha;
-    private Sexo sexo;
+    private SexoEnum sexoEnum;
     //bater em api para buscar dados com o cpf
     private String cpf;
-    private EstadoCivil estadoCivil;
-    private NivelEducacional nivelEducacional;
+    private EstadoCivilEnum estadoCivilEnum;
+    private NivelEducacionalEnum nivelEducacionalEnum;
     private Float rendaAnual;
-    private Ocupacao ocupacao;
+    private OcupacaoEnum ocupacaoEnum;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
@@ -47,12 +47,12 @@ public class Usuario {
         this.dataDeNasciemto = cadastroUsuarioDTO.dataDeNasciemto();
         this.email = cadastroUsuarioDTO.email();
         this.senha = cadastroUsuarioDTO.senha();
-        this.sexo = cadastroUsuarioDTO.sexo();
+        this.sexoEnum = cadastroUsuarioDTO.sexoEnum();
         this.cpf = cadastroUsuarioDTO.cpf();
-        this.estadoCivil = cadastroUsuarioDTO.estadoCivil();
-        this.nivelEducacional = cadastroUsuarioDTO.nivelEducacional();
+        this.estadoCivilEnum = cadastroUsuarioDTO.estadoCivilEnum();
+        this.nivelEducacionalEnum = cadastroUsuarioDTO.nivelEducacionalEnum();
         this.rendaAnual = cadastroUsuarioDTO.rendaAnual();
-        this.ocupacao = cadastroUsuarioDTO.ocupacao();
+        this.ocupacaoEnum = cadastroUsuarioDTO.ocupacaoEnum();
         this.endereco = cadastroUsuarioDTO.endereco();
         this.compras = cadastroUsuarioDTO.compras();
     }
@@ -62,11 +62,11 @@ public class Usuario {
         if(atualizacaoUsuarioDTO.dataDeNasciemto() != null) this.dataDeNasciemto = atualizacaoUsuarioDTO.dataDeNasciemto();
         if(atualizacaoUsuarioDTO.email() != null) this.email = atualizacaoUsuarioDTO.email();
         if(atualizacaoUsuarioDTO.senha() != null) this.senha = atualizacaoUsuarioDTO.senha();
-        if(atualizacaoUsuarioDTO.sexo() != null) this.sexo = atualizacaoUsuarioDTO.sexo();
+        if(atualizacaoUsuarioDTO.sexoEnum() != null) this.sexoEnum = atualizacaoUsuarioDTO.sexoEnum();
         if(atualizacaoUsuarioDTO.cpf() != null) this.cpf = atualizacaoUsuarioDTO.cpf();
-        if(atualizacaoUsuarioDTO.estadoCivil() != null) this.estadoCivil = atualizacaoUsuarioDTO.estadoCivil();
-        if(atualizacaoUsuarioDTO.nivelEducacional() != null) this.nivelEducacional = atualizacaoUsuarioDTO.nivelEducacional();
+        if(atualizacaoUsuarioDTO.estadoCivilEnum() != null) this.estadoCivilEnum = atualizacaoUsuarioDTO.estadoCivilEnum();
+        if(atualizacaoUsuarioDTO.nivelEducacionalEnum() != null) this.nivelEducacionalEnum = atualizacaoUsuarioDTO.nivelEducacionalEnum();
         if(atualizacaoUsuarioDTO.rendaAnual() != null) this.rendaAnual = atualizacaoUsuarioDTO.rendaAnual();
-        if(atualizacaoUsuarioDTO.ocupacao() != null) this.ocupacao = atualizacaoUsuarioDTO.ocupacao();
+        if(atualizacaoUsuarioDTO.ocupacaoEnum() != null) this.ocupacaoEnum = atualizacaoUsuarioDTO.ocupacaoEnum();
     }
 }

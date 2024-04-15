@@ -1,6 +1,6 @@
 package com.app.markfy.GerenciamentoDeCompras.model.enums;
 
-public enum Sexo {
+public enum SexoEnum {
     MASCULINO,
     FEMININO,
     OUTRO
