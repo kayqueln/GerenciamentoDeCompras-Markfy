@@ -28,11 +28,11 @@ Para rodar a aplicação, siga os passos abaixo:
 ## Diagramas:
 
 Diagrama de classes:
-![Diagrama de classes.png](./Diagrama%20de%20classes.png)
+![Diagrama de classes.png](./documentos_do_projeto/Diagrama%20de%20classes.png)
 
 
 Diagrama de Entidade e Relacionamento:
-![DER.png](./DER.png)
+![DER.png](./documentos_do_projeto/DER.png)
 
 ## Vídeo de Apresentação:
 
