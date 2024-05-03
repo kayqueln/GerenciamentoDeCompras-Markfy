@@ -85,3 +85,12 @@ Para mais detalhes sobre cada endpoint acesse a collection do Insomnia com todas
 4. Depois clique na opção `importar`.
 5. Selecione o JSON (Insominia_Collection_Markfy.json) baixado e importe a collection.
 6. Faça as chamadas aos endpoints listados acima respeitando a ordem das requisições
+
+
+
+
+## Próximos passos 
+- Autenticação com JWT
+- Perfil de comprador e vendedor
+- Autenticação com google e github
+- integração com frontend
