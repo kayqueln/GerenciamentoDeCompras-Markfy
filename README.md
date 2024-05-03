@@ -90,6 +90,8 @@ Para mais detalhes sobre cada endpoint acesse a collection do Insomnia com todas
 
 
 ## Próximos passos 
+- Bean validation
+- reorganizar a documentação
 - Autenticação com JWT
 - Perfil de comprador e vendedor
 - Autenticação com google e github
